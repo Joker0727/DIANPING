@@ -26,13 +26,13 @@ namespace DIANPING
         public string workId = "ww-0006";
         public bool isLogin = false;
         public int totalPage = 0;
-        public string searchWord,
-            cityPinyin,
-            searchUrlPrefix,
-            searchUrl = string.Empty;
         public SQLiteHelper sh = null;
         public string basePath = AppDomain.CurrentDomain.BaseDirectory;
         public string dataFullPath = AppDomain.CurrentDomain.BaseDirectory + "sqlite3.db";
+        public string searchWord,
+                      cityPinyin,
+                      searchUrlPrefix,
+                      searchUrl = string.Empty;
 
         public Form1()
         {
@@ -54,6 +54,11 @@ namespace DIANPING
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!IsAuthorised())
+            {
+                MessageBox.Show("请检查网络！", "DIANPING");
+                return;
+            }
             if (!isLogin)
             {
                 MessageBox.Show("请退出程序重新你登陆！", "DIANPING");
@@ -81,27 +86,41 @@ namespace DIANPING
         /// </summary>
         public void GetShopPages()
         {
-            sel.driver.Navigate().GoToUrl(cityUrl);
-            ReadOnlyCollection<IWebElement> searchWordList = sel.FindElementsByClassName("search-word");
-            if (searchWordList != null && searchWordList.Count > 0)
+            try
             {
-                searchUrlPrefix = searchWordList[0].GetAttribute("href").Split('_')[0] + "_";
-                searchUrl = searchUrlPrefix + searchWord;
-                sel.driver.Navigate().GoToUrl(searchUrl);
-                ((IJavaScriptExecutor)sel.driver).ExecuteScript("location.reload()");
-                ReadOnlyCollection<IWebElement> pageNodeList = sel.FindElementsByClassName("PageLink");
-                if (pageNodeList != null && pageNodeList.Count > 0)
+                sel.driver.Navigate().GoToUrl(cityUrl);
+                ReadOnlyCollection<IWebElement> searchWordList = sel.FindElementsByClassName("search-word");
+                if (searchWordList != null && searchWordList.Count > 0)
                 {
-                    int pageCount = pageNodeList.Count();
-                    string pageUrl = string.Empty;
-                    totalPage = int.Parse(pageNodeList[pageCount - 1].Text);
-                    for (int i = 1; i < totalPage; i++)
+                    searchUrlPrefix = searchWordList[0].GetAttribute("href").Split('_')[0] + "_";
+                    searchUrl = searchUrlPrefix + searchWord;
+                    sel.driver.Navigate().GoToUrl(searchUrl);
+
+                    ReadOnlyCollection<IWebElement> pageNodeList = sel.FindElementsByClassName("PageLink");
+                    if (pageNodeList != null && pageNodeList.Count > 0)
                     {
-                        pageUrl = searchUrl + "/p" + i;
-                        sel.driver.Navigate().GoToUrl(pageUrl);
-                        GetShopUrl();
+                        int pageCount = pageNodeList.Count();
+                        string pageUrl = string.Empty;
+                        totalPage = int.Parse(pageNodeList[pageCount - 1].Text);
+                        for (int i = 1; i < totalPage; i++)
+                        {
+                            try
+                            {
+                                pageUrl = searchUrl + "/p" + i;
+                                sel.driver.Navigate().GoToUrl(pageUrl);
+                                GetShopUrl();
+                            }
+                            catch (Exception ex)
+                            {
+                                WriteLog(ex.ToString());
+                            }
+                        }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                WriteLog(e.ToString());
             }
         }
         /// <summary>
@@ -109,26 +128,74 @@ namespace DIANPING
         /// </summary>
         public void GetShopUrl()
         {
-            ReadOnlyCollection<IWebElement> shopNodeList = sel.FindElementsByXPath("//div[@id='shop-all-list']/ul/li/div[@class='pic']/a");
-            if (shopNodeList != null && shopNodeList.Count > 0)
+            try
             {
-                string shopUrl, sqlStr = string.Empty;
-                sh = new SQLiteHelper(dataFullPath);
-
-                foreach (var shopNode in shopNodeList)
+                ReadOnlyCollection<IWebElement> shopNodeList = sel.FindElementsByXPath("//div[@id='shop-all-list']/ul/li/div[@class='pic']/a");
+                if (shopNodeList != null && shopNodeList.Count > 0)
                 {
-                    try
+                    string shopUrl, sqlStr = string.Empty;
+                    sh = new SQLiteHelper(dataFullPath);
+
+                    foreach (var shopNode in shopNodeList)
                     {
-                        shopUrl = shopNode.GetAttribute("href");
-                        sqlStr = "inster into Shops (ShopUrl,IsPraise,IsUpload) values ('" + shopUrl + "',0,0)";
-                        sh.RunSql(sqlStr);
-                    }
-                    catch (Exception ex)
-                    {
-                        WriteLog(ex.ToString());
+                        try
+                        {
+                            shopUrl = shopNode.GetAttribute("href");
+                            sqlStr = "insert into Shops (ShopUrl,IsPraise,IsUpload) values ('" + shopUrl + "',0,0)";
+                            int urlId = sh.ExeSqlOut(sqlStr);
+                            if (ToPraise(shopUrl))
+                            {
+                                sqlStr = "UPDATE  Shops SET IsPraise = 1 where Id = "+ urlId + "";
+                                sh.RunSql(sqlStr);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            WriteLog(ex.ToString());
+                        }
                     }
                 }
             }
+            catch (Exception e)
+            {
+                WriteLog(e.ToString());
+            }
+        }
+        /// <summary>
+        /// 点赞
+        /// </summary>
+        public bool ToPraise(string shopUrl)
+        {
+            bool isAllPraise = false;
+            try
+            {
+                sel.driver.Navigate().GoToUrl(shopUrl);
+                ReadOnlyCollection<IWebElement> praiseNodeList = sel.FindElementsByXPath("//a[@class='item J-praise']");
+                if (praiseNodeList != null && praiseNodeList.Count > 0)
+                {
+                    for (int i = 0; i < praiseNodeList.Count; i++)
+                    {
+                        try
+                        {
+                            string jsStr = "document.getElementsByClassName('item J-praise')[" + i + "].click();";
+                            ((IJavaScriptExecutor)sel.driver).ExecuteScript(jsStr); //需要将driver强制转换成JS执行器类型
+                        }
+                        catch (Exception ex)
+                        {
+                            isAllPraise = false;
+                            WriteLog(ex.ToString());
+                        }
+
+                    }
+                    isAllPraise = true;
+                }
+            }
+            catch (Exception e)
+            {
+                isAllPraise = false;
+                WriteLog(e.ToString());
+            }
+            return isAllPraise;
         }
         /// <summary>
         /// 判断字符串是不是数字类型的 true是数字
@@ -180,7 +247,7 @@ namespace DIANPING
         /// </summary>
         /// <param name="workId"></param>
         /// <returns></returns>
-        public bool IsAuthorised(string workId)
+        public bool IsAuthorised()
         {
             string conStr = "Server=111.230.149.80;DataBase=MyDB;uid=sa;pwd=1add1&one";
             bool bo = false;

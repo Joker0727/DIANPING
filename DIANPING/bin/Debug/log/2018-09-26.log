@@ -1,0 +1,448 @@
+﻿2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:56:45 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:10 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:14 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143
+2018-09-26 14:57:36 -> OpenQA.Selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=69.0.3486.0)
+  (Driver info: chromedriver=2.41.578737 (49da6702b16031c40d63e5618de03a32ff6c197e),platform=Windows NT 10.0.16299 x86_64)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   在 OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.Execute(String commandToExecute, Dictionary`2 parameters)
+   在 OpenQA.Selenium.Remote.RemoteWebElement.GetAttribute(String attributeName)
+   在 DIANPING.Form1.GetShopUrl() 位置 E:\Private\DIANPING\DIANPING\Form1.cs:行号 143

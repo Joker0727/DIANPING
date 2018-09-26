@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,10 +34,16 @@ namespace DIANPING
                       cityPinyin,
                       searchUrlPrefix,
                       searchUrl = string.Empty;
+        public Thread praiseTh,
+                      upLoadTh = null;
+        public string picFolderPath = string.Empty;
+        public List<string> picList = new List<string>();
 
         public Form1()
         {
             InitializeComponent();
+            sh = new SQLiteHelper(dataFullPath);
+            ToUpLoadPage();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,35 +58,110 @@ namespace DIANPING
             else
                 isLogin = false;
         }
-
+        /// <summary>
+        /// 点赞
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!IsAuthorised())
+            string btnText = this.button1.Text;
+            if (btnText == "开始点赞")
             {
-                MessageBox.Show("请检查网络！", "DIANPING");
-                return;
-            }
-            if (!isLogin)
-            {
-                MessageBox.Show("请退出程序重新你登陆！", "DIANPING");
-                return;
-            }
-            cityPinyin = this.textBox1.Text;
-            searchWord = this.textBox2.Text;
+                if (!IsAuthorised())
+                {
+                    MessageBox.Show("请检查网络！", "DIANPING");
+                    return;
+                }
+                if (!isLogin)
+                {
+                    MessageBox.Show("请退出程序重新你登陆！", "DIANPING");
+                    return;
+                }
+                cityPinyin = this.textBox1.Text;
+                searchWord = this.textBox2.Text;
 
-            if (string.IsNullOrEmpty(cityPinyin))
-            {
-                MessageBox.Show("城市拼音不能为空！", "DIANPING");
-                return;
-            }
-            if (string.IsNullOrEmpty(searchWord))
-            {
-                MessageBox.Show("搜索关键词不能为空！", "DIANPING");
-                return;
-            }
-            cityUrl = mainUrl + "/" + cityPinyin;
+                if (string.IsNullOrEmpty(cityPinyin))
+                {
+                    MessageBox.Show("城市拼音不能为空！", "DIANPING");
+                    return;
+                }
+                if (string.IsNullOrEmpty(searchWord))
+                {
+                    MessageBox.Show("搜索关键词不能为空！", "DIANPING");
+                    return;
+                }
+                cityUrl = mainUrl + "/" + cityPinyin;
 
-            GetShopPages();
+                this.button1.Text = "暂停";
+                praiseTh = new Thread(GetShopPages);
+                praiseTh.IsBackground = true;
+                praiseTh.Start();
+            }
+            else
+            {
+                if (praiseTh != null)
+                {
+                    praiseTh.Abort();
+                    praiseTh = null;
+                    this.button1.Text = "开始点赞";
+                }
+            }
+        }
+        /// <summary>
+        /// 上传图片
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string btn2Text = this.button2.Text;
+            if (btn2Text == "上传图片")
+            {
+                if (!IsAuthorised())
+                {
+                    MessageBox.Show("请检查网络！", "DIANPING");
+                    return;
+                }
+                if (!isLogin)
+                {
+                    MessageBox.Show("请退出程序重新你登陆！", "DIANPING");
+                    return;
+                }
+
+                picFolderPath = this.textBox3.Text;
+                if (string.IsNullOrEmpty(picFolderPath))
+                {
+                    MessageBox.Show("待上传图片所在文件夹路径不能为空！", "DIANPING");
+                    return;
+                }
+                this.button2.Text = "暂停";
+                if (!ReadAllPicPath())
+                    return;
+               // upLoadTh = new Thread();
+                upLoadTh.IsBackground = true;
+                upLoadTh.Start();
+            }
+            else
+            {
+                if (upLoadTh != null)
+                {
+                    upLoadTh.Abort();
+                    upLoadTh = null;
+                }
+            }
+        }
+        /// <summary>
+        /// 点击选择待上传图片文件夹
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "请选择待上传图片所在文件夹";
+            if (dialog.ShowDialog() == DialogResult.OK)
+                this.textBox3.Text = dialog.SelectedPath;
         }
         /// <summary>
         /// 获取店铺页数
@@ -145,7 +227,7 @@ namespace DIANPING
                             int urlId = sh.ExeSqlOut(sqlStr);
                             if (ToPraise(shopUrl))
                             {
-                                sqlStr = "UPDATE  Shops SET IsPraise = 1 where Id = "+ urlId + "";
+                                sqlStr = "UPDATE  Shops SET IsPraise = 1 where Id = " + urlId + "";
                                 sh.RunSql(sqlStr);
                             }
                         }
@@ -167,10 +249,14 @@ namespace DIANPING
         public bool ToPraise(string shopUrl)
         {
             bool isAllPraise = false;
+            string sqlStr = "select IsPraise from Shops where ShopUrl = '" + shopUrl + "'";
+            object obj = sh.GetScalar(sqlStr);
+            if (obj == null || int.Parse(obj.ToString()) == 1)
+                return isAllPraise;
             try
             {
                 sel.driver.Navigate().GoToUrl(shopUrl);
-                ReadOnlyCollection<IWebElement> praiseNodeList = sel.FindElementsByXPath("//a[@class='item J-praise']");
+                ReadOnlyCollection<IWebElement> praiseNodeList = sel.FindElementsByXPath("//a[@class='item J-praise ']");
                 if (praiseNodeList != null && praiseNodeList.Count > 0)
                 {
                     for (int i = 0; i < praiseNodeList.Count; i++)
@@ -185,7 +271,6 @@ namespace DIANPING
                             isAllPraise = false;
                             WriteLog(ex.ToString());
                         }
-
                     }
                     isAllPraise = true;
                 }
@@ -196,6 +281,78 @@ namespace DIANPING
                 WriteLog(e.ToString());
             }
             return isAllPraise;
+        }
+        /// <summary>
+        /// 读取所有待上传图片路径
+        /// </summary>
+        public bool ReadAllPicPath()
+        {
+            if (!Directory.Exists(picFolderPath))
+            {
+                MessageBox.Show("文件夹路径不存在！", "DIANPING");
+                return false;
+            }
+
+            DirectoryInfo dir = new DirectoryInfo(picFolderPath);
+            FileInfo[] fileInfo = dir.GetFiles();
+
+            foreach (FileInfo subinfo in fileInfo)
+            {
+                try
+                {
+                    if (subinfo.Extension.ToLower() == ".jpg" ||
+                   subinfo.Extension.ToLower() == ".png" ||
+                   subinfo.Extension.ToLower() == ".bmp" ||
+                   subinfo.Extension.ToLower() == ".jpeg")
+                    {
+                        string fullPath = subinfo.FullName;
+                        picList.Add(fullPath);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    WriteLog(ex.ToString());
+                }
+            }
+
+            return true;
+        }
+        /// <summary>
+        /// 获取所有需要上传图片的店铺的链接
+        /// </summary>
+        public List<string> GetAllUpLoadShopUrl()
+        {
+            string sqlStr = "select ShopUrl from Shops where IsUpload = 0";
+            string shopUrl = string.Empty;
+            List<string> urlList = new List<string>();
+            object[] objArr = sh.GetField(sqlStr);
+            foreach (var obj in objArr)
+            {
+                try
+                {
+                    shopUrl = obj.ToString();
+                    urlList.Add(shopUrl);
+                }
+                catch (Exception ex)
+                {
+                    WriteLog(ex.ToString());
+                }
+            }
+            return urlList;
+        }
+        /// <summary>
+        /// 进入上传页面
+        /// </summary>
+        public void ToUpLoadPage()
+        {
+            List<string> upLoadShopUrlList =  GetAllUpLoadShopUrl();
+            if (upLoadShopUrlList != null && upLoadShopUrlList.Count > 0)
+            {
+                foreach (var url in upLoadShopUrlList)
+                {
+                    sel.driver.Navigate().GoToUrl(url);
+                }
+            }
         }
         /// <summary>
         /// 判断字符串是不是数字类型的 true是数字

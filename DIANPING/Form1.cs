@@ -1,6 +1,9 @@
 ﻿using MyTools;
+using OpenQA.Selenium;
+using SqlLiteHelperDemo;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
@@ -19,7 +22,17 @@ namespace DIANPING
     {
         public SeleniumHelper sel = null;
         public string mainUrl = "http://www.dianping.com";
+        public string cityUrl = string.Empty;
         public string workId = "ww-0006";
+        public bool isLogin = false;
+        public int totalPage = 0;
+        public string searchWord,
+            cityPinyin,
+            searchUrlPrefix,
+            searchUrl = string.Empty;
+        public SQLiteHelper sh = null;
+        public string basePath = AppDomain.CurrentDomain.BaseDirectory;
+        public string dataFullPath = AppDomain.CurrentDomain.BaseDirectory + "sqlite3.db";
 
         public Form1()
         {
@@ -28,21 +41,95 @@ namespace DIANPING
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            sel = new SeleniumHelper();
+            sel = new SeleniumHelper(1);
             sel.driver.Navigate().GoToUrl(mainUrl);
 
             MessageBoxButtons message = MessageBoxButtons.OKCancel;
             DialogResult dr = MessageBox.Show("请先登录成功后，再点击确定！", "DIANPING", message);
             if (dr == DialogResult.OK)
-            {
+                isLogin = true;
+            else
+                isLogin = false;
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (!isLogin)
+            {
+                MessageBox.Show("请退出程序重新你登陆！", "DIANPING");
+                return;
             }
-        }       
+            cityPinyin = this.textBox1.Text;
+            searchWord = this.textBox2.Text;
+
+            if (string.IsNullOrEmpty(cityPinyin))
+            {
+                MessageBox.Show("城市拼音不能为空！", "DIANPING");
+                return;
+            }
+            if (string.IsNullOrEmpty(searchWord))
+            {
+                MessageBox.Show("搜索关键词不能为空！", "DIANPING");
+                return;
+            }
+            cityUrl = mainUrl + "/" + cityPinyin;
+
+            GetShopPages();
+        }
+        /// <summary>
+        /// 获取店铺页数
+        /// </summary>
+        public void GetShopPages()
+        {
+            sel.driver.Navigate().GoToUrl(cityUrl);
+            ReadOnlyCollection<IWebElement> searchWordList = sel.FindElementsByClassName("search-word");
+            if (searchWordList != null && searchWordList.Count > 0)
+            {
+                searchUrlPrefix = searchWordList[0].GetAttribute("href").Split('_')[0] + "_";
+                searchUrl = searchUrlPrefix + searchWord;
+                sel.driver.Navigate().GoToUrl(searchUrl);
+                ((IJavaScriptExecutor)sel.driver).ExecuteScript("location.reload()");
+                ReadOnlyCollection<IWebElement> pageNodeList = sel.FindElementsByClassName("PageLink");
+                if (pageNodeList != null && pageNodeList.Count > 0)
+                {
+                    int pageCount = pageNodeList.Count();
+                    string pageUrl = string.Empty;
+                    totalPage = int.Parse(pageNodeList[pageCount - 1].Text);
+                    for (int i = 1; i < totalPage; i++)
+                    {
+                        pageUrl = searchUrl + "/p" + i;
+                        sel.driver.Navigate().GoToUrl(pageUrl);
+                        GetShopUrl();
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 获取所有店铺链接
+        /// </summary>
+        public void GetShopUrl()
+        {
+            ReadOnlyCollection<IWebElement> shopNodeList = sel.FindElementsByXPath("//div[@id='shop-all-list']/ul/li/div[@class='pic']/a");
+            if (shopNodeList != null && shopNodeList.Count > 0)
+            {
+                string shopUrl, sqlStr = string.Empty;
+                sh = new SQLiteHelper(dataFullPath);
+
+                foreach (var shopNode in shopNodeList)
+                {
+                    try
+                    {
+                        shopUrl = shopNode.GetAttribute("href");
+                        sqlStr = "inster into Shops (ShopUrl,IsPraise,IsUpload) values ('" + shopUrl + "',0,0)";
+                        sh.RunSql(sqlStr);
+                    }
+                    catch (Exception ex)
+                    {
+                        WriteLog(ex.ToString());
+                    }
+                }
+            }
+        }
         /// <summary>
         /// 判断字符串是不是数字类型的 true是数字
         /// </summary>

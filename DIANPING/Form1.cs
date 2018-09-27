@@ -493,7 +493,7 @@ namespace DIANPING
         /// <returns></returns>
         public bool IsAuthorised()
         {
-            string conStr = "Server=111.230.149.80;DataBase=MyDB;uid=sa;pwd=1add1&one";
+            string conStr = "";
             bool bo = false;
             try
             {

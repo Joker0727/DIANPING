@@ -39,7 +39,8 @@ namespace DIANPING
         public string picFolderPath = string.Empty;
         public List<string> picList = new List<string>();
         public bool isOk = true;
-
+        public int praiseCount = 0;
+        public int upLoadCount = 0;
 
         public Form1()
         {
@@ -48,6 +49,7 @@ namespace DIANPING
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.MaximizeBox = false;
             if (!File.Exists(dataFullPath))
             {
                 MessageBox.Show("本地数据库文件存在！", "DIANPING");
@@ -242,24 +244,24 @@ namespace DIANPING
                 if (shopNodeList != null && shopNodeList.Count > 0)
                 {
                     string shopUrl, sqlStr = string.Empty;
-
+                    List<string> tempUrlList = new List<string>();
                     foreach (var shopNode in shopNodeList)
                     {
                         try
                         {
                             shopUrl = shopNode.GetAttribute("href");
-                            sqlStr = "insert into Shops (ShopUrl,IsPraise,IsUpload) values ('" + shopUrl + "',0,0)";
+                            tempUrlList.Add(shopUrl);
+                            sqlStr = "insert into Shops (ShopUrl,IsUpLoad) values ('" + shopUrl + "',0)";
                             int urlId = sh.ExeSqlOut(sqlStr);
-                            if (ToPraise(shopUrl))
-                            {
-                                sqlStr = "UPDATE  Shops SET IsPraise = 1 where Id = " + urlId + "";
-                                sh.RunSql(sqlStr);
-                            }
                         }
                         catch (Exception ex)
                         {
                             WriteLog(ex.ToString());
                         }
+                    }
+                    foreach (var tempUrl in tempUrlList)
+                    {                  
+                        ToPraise(tempUrl);
                     }
                 }
             }
@@ -274,14 +276,10 @@ namespace DIANPING
         public bool ToPraise(string shopUrl)
         {
             bool isAllPraise = false;
-            string sqlStr = "select IsPraise from Shops where ShopUrl = '" + shopUrl + "'";
-            object obj = sh.GetScalar(sqlStr);
-            if (obj == null || int.Parse(obj.ToString()) == 1)
-                return isAllPraise;
             try
             {
                 sel.driver.Navigate().GoToUrl(shopUrl);
-                ReadOnlyCollection<IWebElement> praiseNodeList = sel.FindElementsByXPath("//a[@class='item J-praise ']");
+                ReadOnlyCollection<IWebElement> praiseNodeList = sel.FindElementsByCss(".item.J-praise");
                 if (praiseNodeList != null && praiseNodeList.Count > 0)
                 {
                     for (int i = 0; i < praiseNodeList.Count; i++)
@@ -290,6 +288,11 @@ namespace DIANPING
                         {
                             string jsStr = "document.getElementsByClassName('item J-praise')[" + i + "].click();";
                             ((IJavaScriptExecutor)sel.driver).ExecuteScript(jsStr); //需要将driver强制转换成JS执行器类型
+                            praiseCount++;
+                            this.label6.Invoke(new Action(() =>
+                            {
+                                this.label6.Text = praiseCount.ToString();
+                            }));
                         }
                         catch (Exception ex)
                         {
@@ -348,7 +351,7 @@ namespace DIANPING
         /// </summary>
         public List<string> GetAllUpLoadShopUrl()
         {
-            string sqlStr = "select ShopUrl from Shops where IsUpload = 0";
+            string sqlStr = "select ShopUrl from Shops where IsUpLoad = 0";
             string shopUrl = string.Empty;
             List<string> urlList = new List<string>();
             object[] objArr = sh.GetField(sqlStr);
@@ -372,30 +375,71 @@ namespace DIANPING
         public void ToUpLoadPage()
         {
             List<string> upLoadShopUrlList = GetAllUpLoadShopUrl();
+            string tempStr = "http://www.dianping.com/shop/";
+            string shopIdStr, upLoadUrl = string.Empty;
+
             if (upLoadShopUrlList != null && upLoadShopUrlList.Count > 0)
             {
                 foreach (var url in upLoadShopUrlList)
                 {
                     try
                     {
-                        sel.driver.Navigate().GoToUrl(url);
-                        IWebElement addPicNode = sel.FindElementByCss(".add-photo.J_addPhoto");
-                        if (addPicNode != null)
+                        shopIdStr = url.Replace(tempStr, "").Trim();
+                        if (!IsNumeric(shopIdStr))
+                            continue;
+                        upLoadUrl = "http://www.dianping.com/upload/shop/" + shopIdStr;
+                        sel.driver.Navigate().GoToUrl(upLoadUrl);
+
+                        IWebElement addPicBtnNode = sel.FindElementByName("file");
+
+                        addPicBtnNode.SendKeys(GetPicPath());
+                        while (true)
                         {
-                            string addUrl = addPicNode.GetAttribute("href");
-                            if (!addUrl.Contains("http://www.dianping.com"))
-                                addUrl = "http://www.dianping.com" + addUrl;
-                            sel.driver.Navigate().GoToUrl(addUrl);
-                            IWebElement addPicBtnNode = sel.FindElementByName("file");
-                            addPicBtnNode.SendKeys(@"C:\Users\16107\Desktop\1\2.jpg");
+                            Thread.Sleep(1000);
+                            IWebElement btn_save = sel.FindElementByClassName("btn_save");
+                            if (btn_save != null)
+                            {
+                                btn_save.Click();
+                                break;
+                            }
                         }
+                        upLoadCount++;
+                        this.label7.Invoke(new Action(() =>
+                        {
+                            this.label7.Text = upLoadCount.ToString();
+                        }));
+
+                        string sqlStr = "UPDATE  Shops SET IsUpLoad = 1 where ShopUrl = '" + url + "'";
+                        sh.RunSql(sqlStr);
+
+                        Thread.Sleep(1000);
                     }
                     catch (Exception ex)
                     {
                         WriteLog(ex.ToString());
-                    }                   
+                    }
                 }
             }
+        }
+        /// <summary>
+        /// 随机获取图片路径
+        /// </summary>
+        /// <returns></returns>
+        public string GetPicPath()
+        {
+            string picPath = string.Empty;
+            try
+            {
+                int length = picList.Count();
+                Random rd = new Random();
+                int sub = rd.Next(0, length);
+                picPath = picList[sub];
+            }
+            catch (Exception ex)
+            {
+                WriteLog(ex.ToString());
+            }
+            return picPath;
         }
         /// <summary>
         /// 判断字符串是不是数字类型的 true是数字

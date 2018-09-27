@@ -82,7 +82,7 @@ namespace MyTools
             return element;
         }
         /// <summary>
-        /// 根据name查找元素
+        /// 根据className查找元素
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
@@ -231,7 +231,7 @@ namespace MyTools
         public void CloseBrowserAndDriver()
         {
             KillProcess("firefox");
-            //KillProcess("chrome");
+            KillProcess("chrome");
             KillProcess("geckodriver");
             KillProcess("chromedriver");
         }

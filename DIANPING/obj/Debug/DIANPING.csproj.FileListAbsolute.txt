@@ -37,7 +37,6 @@ F:\Private\大众点评\DIANPING\DIANPING\bin\Debug\System.Data.SQLite.xml
 F:\Private\大众点评\DIANPING\DIANPING\bin\Debug\System.Data.SQLite.dll.config
 F:\Private\大众点评\DIANPING\DIANPING\bin\Debug\WebDriver.xml
 F:\Private\大众点评\DIANPING\DIANPING\bin\Debug\WebDriver.Support.xml
-F:\Private\大众点评\DIANPING\DIANPING\obj\Debug\DIANPING.csprojResolveAssemblyReference.cache
 F:\Private\大众点评\DIANPING\DIANPING\obj\Debug\DIANPING.Form1.resources
 F:\Private\大众点评\DIANPING\DIANPING\obj\Debug\DIANPING.Properties.Resources.resources
 F:\Private\大众点评\DIANPING\DIANPING\obj\Debug\DIANPING.csproj.GenerateResource.cache

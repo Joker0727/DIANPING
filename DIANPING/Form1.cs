@@ -38,16 +38,22 @@ namespace DIANPING
                       upLoadTh = null;
         public string picFolderPath = string.Empty;
         public List<string> picList = new List<string>();
+        public bool isOk = true;
+
 
         public Form1()
         {
             InitializeComponent();
-            sh = new SQLiteHelper(dataFullPath);
-            ToUpLoadPage();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (!File.Exists(dataFullPath))
+            {
+                MessageBox.Show("本地数据库文件存在！", "DIANPING");
+                isOk = false;
+            }
+            sh = new SQLiteHelper(dataFullPath);
             sel = new SeleniumHelper(1);
             sel.driver.Navigate().GoToUrl(mainUrl);
 
@@ -65,7 +71,10 @@ namespace DIANPING
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
+            this.button2.Text = "上传图片";
             string btnText = this.button1.Text;
+            if (!isOk)
+                return;
             if (btnText == "开始点赞")
             {
                 if (!IsAuthorised())
@@ -77,6 +86,12 @@ namespace DIANPING
                 {
                     MessageBox.Show("请退出程序重新你登陆！", "DIANPING");
                     return;
+                }
+                if (upLoadTh != null)
+                {
+                    upLoadTh.Abort();
+                    upLoadTh = null;
+                    this.button2.Enabled = false;
                 }
                 cityPinyin = this.textBox1.Text;
                 searchWord = this.textBox2.Text;
@@ -100,6 +115,7 @@ namespace DIANPING
             }
             else
             {
+                this.button2.Enabled = true;
                 if (praiseTh != null)
                 {
                     praiseTh.Abort();
@@ -115,7 +131,10 @@ namespace DIANPING
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
+            this.button1.Text = "开始点赞";
             string btn2Text = this.button2.Text;
+            if (!isOk)
+                return;
             if (btn2Text == "上传图片")
             {
                 if (!IsAuthorised())
@@ -128,7 +147,12 @@ namespace DIANPING
                     MessageBox.Show("请退出程序重新你登陆！", "DIANPING");
                     return;
                 }
-
+                if (praiseTh != null)
+                {
+                    praiseTh.Abort();
+                    praiseTh = null;
+                    this.button1.Enabled = false;
+                }
                 picFolderPath = this.textBox3.Text;
                 if (string.IsNullOrEmpty(picFolderPath))
                 {
@@ -138,16 +162,18 @@ namespace DIANPING
                 this.button2.Text = "暂停";
                 if (!ReadAllPicPath())
                     return;
-               // upLoadTh = new Thread();
+                upLoadTh = new Thread(ToUpLoadPage);
                 upLoadTh.IsBackground = true;
                 upLoadTh.Start();
             }
             else
             {
+                this.button1.Enabled = true;
                 if (upLoadTh != null)
                 {
                     upLoadTh.Abort();
                     upLoadTh = null;
+                    this.button2.Text = "上传图片";
                 }
             }
         }
@@ -216,7 +242,6 @@ namespace DIANPING
                 if (shopNodeList != null && shopNodeList.Count > 0)
                 {
                     string shopUrl, sqlStr = string.Empty;
-                    sh = new SQLiteHelper(dataFullPath);
 
                     foreach (var shopNode in shopNodeList)
                     {
@@ -282,6 +307,7 @@ namespace DIANPING
             }
             return isAllPraise;
         }
+
         /// <summary>
         /// 读取所有待上传图片路径
         /// </summary>
@@ -345,12 +371,29 @@ namespace DIANPING
         /// </summary>
         public void ToUpLoadPage()
         {
-            List<string> upLoadShopUrlList =  GetAllUpLoadShopUrl();
+            List<string> upLoadShopUrlList = GetAllUpLoadShopUrl();
             if (upLoadShopUrlList != null && upLoadShopUrlList.Count > 0)
             {
                 foreach (var url in upLoadShopUrlList)
                 {
-                    sel.driver.Navigate().GoToUrl(url);
+                    try
+                    {
+                        sel.driver.Navigate().GoToUrl(url);
+                        IWebElement addPicNode = sel.FindElementByCss(".add-photo.J_addPhoto");
+                        if (addPicNode != null)
+                        {
+                            string addUrl = addPicNode.GetAttribute("href");
+                            if (!addUrl.Contains("http://www.dianping.com"))
+                                addUrl = "http://www.dianping.com" + addUrl;
+                            sel.driver.Navigate().GoToUrl(addUrl);
+                            IWebElement addPicBtnNode = sel.FindElementByName("file");
+                            addPicBtnNode.SendKeys(@"C:\Users\16107\Desktop\1\2.jpg");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        WriteLog(ex.ToString());
+                    }                   
                 }
             }
         }

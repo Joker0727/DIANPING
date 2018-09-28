@@ -260,7 +260,7 @@ namespace DIANPING
                         }
                     }
                     foreach (var tempUrl in tempUrlList)
-                    {                  
+                    {
                         ToPraise(tempUrl);
                     }
                 }
@@ -389,19 +389,17 @@ namespace DIANPING
                             continue;
                         upLoadUrl = "http://www.dianping.com/upload/shop/" + shopIdStr;
                         sel.driver.Navigate().GoToUrl(upLoadUrl);
-
-                        IWebElement addPicBtnNode = sel.FindElementByName("file");
-
-                        addPicBtnNode.SendKeys(GetPicPath());
-                        while (true)
+                        foreach (var pic in picList)
                         {
-                            Thread.Sleep(1000);
-                            IWebElement btn_save = sel.FindElementByClassName("btn_save");
-                            if (btn_save != null)
-                            {
-                                btn_save.Click();
-                                break;
-                            }
+                            IWebElement addPicBtnNode = sel.FindElementByName("file");
+                            addPicBtnNode.SendKeys(pic);
+                            Thread.Sleep(2000);
+                        }
+                        IWebElement btn_save = sel.FindElementByClassName("btn_save");
+                        if (btn_save != null)
+                        {
+                            btn_save.Click();
+                            break;
                         }
                         upLoadCount++;
                         this.label7.Invoke(new Action(() =>
@@ -493,7 +491,7 @@ namespace DIANPING
         /// <returns></returns>
         public bool IsAuthorised()
         {
-            string conStr = "";
+            string conStr = "Server=111.230.149.80;DataBase=MyDB;uid=sa;pwd=1add1&one";
             bool bo = false;
             try
             {
